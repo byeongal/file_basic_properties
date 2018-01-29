@@ -39,6 +39,3 @@ def run() :
     zip_file_path = create_zip_file_path(ZIP_FILE_PATH)
     p=mp.Pool(CPU_COUNT)
     p.map(unzip, zip_file_path)
-
-if __name__ == '__main__' :
-    run()
