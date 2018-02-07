@@ -20,3 +20,4 @@ Version 1.0
 Version 1.1
 * 멀티프로세싱 부분관련된 부분 제거
 * [file_basic_properties.py](file_basic_properties.py)를 실행할 경우 [json](./json)폴더에 md5.json 파일 생성 되도록 수정
+* os 에 상관없이 ssdeep 구할 수 있도록 경로 수정
