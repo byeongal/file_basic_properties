@@ -26,6 +26,7 @@ def get_ssdeep( file_path ) :
     return ssdeep_result
 
 def make_json( file_path ) :
+    file_path = os.path.normpath(file_path)
     ret_dic = {}
     # md5, sha1
     ret_dic['MD5'], ret_dic['SHA-1'] = get_hash_str( file_path )
