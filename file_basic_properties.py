@@ -1,6 +1,4 @@
-import subprocess, hashlib, simplejson, sys
-
-from settings import *
+import os, subprocess, hashlib, simplejson, sys
 
 def get_hash_str( file_path, block_size = 8192 ) :
     md5, sha_1 = hashlib.md5(), hashlib.sha1()
@@ -39,8 +37,8 @@ def make_json( file_path ) :
     ret_dic['SSDeep'] = get_ssdeep(file_path)
     if not os.path.exists('./json') :
         os.makedirs('./json')
-    with open(os.path.join('./json', '{MD5}.json'.format(MD5 = ret_dic['MD5']))) as f :
-        simplejson.dumps(ret_dic, f)
+    with open(os.path.join('./json', '{MD5}.json'.format(MD5 = ret_dic['MD5'])), 'w') as f :
+        simplejson.dump(ret_dic, f)
 
 if __name__ == '__main__' :
     if len(sys.argv) == 2 :
